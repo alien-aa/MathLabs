@@ -30,10 +30,6 @@ class BinEuclid(ITask1):
             return {"gcd": b_input,
                     "x": 0,
                     "y": 1}
-        if a_input == b_input:
-            return {"gcd": a_input,
-                    "x": 0,
-                    "y": 1}
         while (a_input % 2 == 0) and (b_input % 2 == 0):
             a_input = a_input // 2
             b_input = b_input // 2

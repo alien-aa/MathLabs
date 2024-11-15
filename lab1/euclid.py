@@ -29,10 +29,6 @@ class Euclid(ITask1):
             return {"gcd": b,
                     "x": 0,
                     "y": 1}
-        if a == b:
-            return {"gcd": a,
-                    "x": 0,
-                    "y": 1}
         r_values = [a, b]
         x_values = [1, 0]
         y_values = [0, 1]

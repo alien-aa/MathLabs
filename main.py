@@ -2,6 +2,10 @@ from lab1.euclid import Euclid
 from lab1.bineuclid import BinEuclid
 from lab1.remaineuclid import RemainEuclid
 
+from lab2.fermat import FermatTest
+from lab2.solovay_strassen import SolovayStrassenTest
+from lab2.rabin_miller import RabinMillerTest
+
 
 def read_input(filename: str = ""):
     with open(filename, 'r', encoding='utf-8') as f:
@@ -37,6 +41,23 @@ def task1(input_numbers: dict):
     algorithm.gcd_algorithm(a_num=input_numbers["1"][0], b_num=input_numbers["1"][1])
     algorithm.gcd_algorithm(a_num=input_numbers["1"][2], b_num=input_numbers["1"][3])
     algorithm.gcd_algorithm(a_num=input_numbers["1"][4], b_num=input_numbers["1"][5])
+
+def task2(input_numbers: dict):
+    algorithm = FermatTest()
+    algorithm.print_results(num=input_numbers["2"][0])
+    algorithm.print_results(num=input_numbers["2"][1])
+    algorithm.print_results(num=input_numbers["2"][2])
+    algorithm.print_results(num=input_numbers["2"][3])
+    algorithm = SolovayStrassenTest()
+    algorithm.print_results(num=input_numbers["2"][0])
+    algorithm.print_results(num=input_numbers["2"][1])
+    algorithm.print_results(num=input_numbers["2"][2])
+    algorithm.print_results(num=input_numbers["2"][3])
+    algorithm = RabinMillerTest()
+    algorithm.print_results(num=input_numbers["2"][0])
+    algorithm.print_results(num=input_numbers["2"][1])
+    algorithm.print_results(num=input_numbers["2"][2])
+    algorithm.print_results(num=input_numbers["2"][3])
 
 
 def main(input_file: str = ""):

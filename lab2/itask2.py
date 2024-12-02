@@ -13,6 +13,6 @@ class ITask2(ABC):
     def primality_test(self, num: int) -> bool:
         """
         :param num: integer number
-        :return: True if num is composite, False if num is probably prime
+        :return: True if num is probably prime, False if num is composite
         """
         pass

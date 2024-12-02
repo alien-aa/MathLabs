@@ -1,6 +1,5 @@
 .venv
 .idea
-lab2/draft.py
 lab2/__pycache__/
 lab3
 lab4

@@ -28,6 +28,18 @@ def read_input(filename: str = ""):
             tasks[curr_task].append(int(line[2:]))
     return tasks
 
+def repeat_function(n, func, *args, **kwargs):
+    """
+    Performs the specified function n times.
+
+    :param n: Number of repetitions
+    :param func: Function to be executed
+    :param args: Positional arguments for func function
+    :param kwargs: Keyword arguments for func function
+    """
+    for _ in range(n):
+        func(*args, **kwargs)
+
 def task1(input_numbers: dict):
     algorithm = Euclid()
     algorithm.gcd_algorithm(a_num=input_numbers["1"][0], b_num=input_numbers["1"][1])
@@ -43,26 +55,51 @@ def task1(input_numbers: dict):
     algorithm.gcd_algorithm(a_num=input_numbers["1"][4], b_num=input_numbers["1"][5])
 
 def task2(input_numbers: dict):
-    algorithm = FermatTest()
-    algorithm.print_results(num=input_numbers["2"][0])
-    algorithm.print_results(num=input_numbers["2"][1])
-    algorithm.print_results(num=input_numbers["2"][2])
-    algorithm.print_results(num=input_numbers["2"][3])
-    algorithm = SolovayStrassenTest()
-    algorithm.print_results(num=input_numbers["2"][0])
-    algorithm.print_results(num=input_numbers["2"][1])
-    algorithm.print_results(num=input_numbers["2"][2])
-    algorithm.print_results(num=input_numbers["2"][3])
-    algorithm = RabinMillerTest()
-    algorithm.print_results(num=input_numbers["2"][0])
-    algorithm.print_results(num=input_numbers["2"][1])
-    algorithm.print_results(num=input_numbers["2"][2])
-    algorithm.print_results(num=input_numbers["2"][3])
+    repetition_number = 5
+    # source: https://arxiv.org/pdf/math/9803082
+    number_1 = 32809426840359564991177172754241
+    #num_1_div = [13, 17, 19, 23, 29, 31, 37, 41, 43, 61, 67, 71, 73,  97, 127, 199, 281, 397]
+    number_2 = 2810864562635368426005268142616001
+    #num_2_div = [13, 17, 19, 23, 29, 31, 37, 41, 43, 61, 67, 71, 73, 109, 113, 127, 151, 281, 353]
+    number_3 = 349407515342287435050603204719587201
+    #num_3_div = [11, 13, 17, 19, 29, 31, 37, 41, 43, 61, 71, 73, 97, 101, 109, 113, 151, 181, 193, 641]
 
+    algorithm = FermatTest()
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][0])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][1])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][2])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][3])
+    algorithm = SolovayStrassenTest()
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][0])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][1])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][2])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][3])
+    algorithm = RabinMillerTest()
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][0])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][1])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][2])
+    repeat_function(repetition_number, algorithm.print_results, input_numbers["2"][3])
+
+    print("CARMICHAEL NUMBERS:")
+
+    algorithm = FermatTest()
+    repeat_function(repetition_number, algorithm.print_results, number_1)
+    repeat_function(repetition_number, algorithm.print_results, number_2)
+    repeat_function(repetition_number, algorithm.print_results, number_3)
+
+    algorithm = SolovayStrassenTest()
+    repeat_function(repetition_number, algorithm.print_results, number_1)
+    repeat_function(repetition_number, algorithm.print_results, number_2)
+    repeat_function(repetition_number, algorithm.print_results, number_3)
+
+    algorithm = RabinMillerTest()
+    repeat_function(repetition_number, algorithm.print_results, number_1)
+    repeat_function(repetition_number, algorithm.print_results, number_2)
+    repeat_function(repetition_number, algorithm.print_results, number_3)
 
 def main(input_file: str = ""):
     numbers = read_input(filename=input_file)
-    task1(input_numbers=numbers)
+    task2(input_numbers=numbers)
 
 
 if __name__ == "__main__":

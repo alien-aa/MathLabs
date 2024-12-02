@@ -1,6 +1,6 @@
 .venv
 .idea
-lab2
+lab2/__pycache__/
 lab3
 lab4
 lab1/__pycache__/

@@ -9,7 +9,7 @@ from lab2.solovay_strassen import SolovayStrassenTest
 from lab2.rabin_miller import RabinMillerTest
 
 from lab3.rho_pollard import RhoPollard
-from lab3.p_1_pollard import Rho1Pollard
+from lab3.p_1_pollard import P1Pollard
 
 
 def read_input(filename: str = ""):
@@ -106,15 +106,15 @@ def task3(input_numbers: dict):
     output_file = "task3_result.txt"
     algorithm = RhoPollard(c=1, add=5)
     asyncio.run(algorithm.print_results(input_numbers["3"][0], output_file))
-    algorithm = Rho1Pollard()
+    algorithm = P1Pollard()
     asyncio.run(algorithm.print_results(input_numbers["3"][0], output_file))
     algorithm = RhoPollard(c=1, add=5)
     asyncio.run(algorithm.print_results(input_numbers["3"][1], output_file))
-    algorithm = Rho1Pollard()
+    algorithm = P1Pollard()
     asyncio.run(algorithm.print_results(input_numbers["3"][1], output_file))
     algorithm = RhoPollard(c=1, add=5)
     asyncio.run(algorithm.print_results(input_numbers["3"][2], output_file))
-    algorithm = Rho1Pollard()
+    algorithm = P1Pollard()
     asyncio.run(algorithm.print_results(input_numbers["3"][2], output_file))
 
 

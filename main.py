@@ -7,9 +7,10 @@ from lab1.remaineuclid import RemainEuclid
 from lab2.fermat import FermatTest
 from lab2.solovay_strassen import SolovayStrassenTest
 from lab2.rabin_miller import RabinMillerTest
-from lab3.rho_1_pollard import Rho1Pollard
 
 from lab3.rho_pollard import RhoPollard
+from lab3.p_1_pollard import Rho1Pollard
+
 
 def read_input(filename: str = ""):
     with open(filename, 'r', encoding='utf-8') as f:
@@ -116,14 +117,11 @@ def task3(input_numbers: dict):
     algorithm = Rho1Pollard()
     asyncio.run(algorithm.print_results(input_numbers["3"][2], output_file))
 
-def task4(input_numbers: dict):
-    output_file = "task4_result.txt"
 
 def main(input_file: str = ""):
     numbers = read_input(filename=input_file)
-    # task2(input_numbers=numbers)
+    task2(input_numbers=numbers)
     # task3(input_numbers=numbers)
-    task4(input_numbers=numbers)
 
 
 if __name__ == "__main__":

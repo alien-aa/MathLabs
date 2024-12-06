@@ -11,7 +11,7 @@ from lab3.itask3 import ITask3
 class TimeoutException(Exception): pass
 
 
-class Rho1Pollard(ITask3):
+class P1Pollard(ITask3):
     def __init__(self):
         super().__init__()
         self.b = []
@@ -34,7 +34,7 @@ class Rho1Pollard(ITask3):
             thread.join()
         end = time.time()
         with open(filename, "a") as f:
-            f.write("____________________________RHO-1 POLLARD____________________________\n")
+            f.write("_____________________________P-1 POLLARD_____________________________\n")
             f.write(f"Number: {num}\n")
             iterations = self.i
             if not terminate:

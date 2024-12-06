@@ -46,7 +46,7 @@ class Rho1Pollard(ITask3):
                 f.write("Result: TIMEOUT\n")
                 time_spent = end - start
                 time_one_iter = time_spent / iterations
-                iterations_need = pow(num, 0.25)
+                iterations_need = iterations * math.log(iterations) * pow(math.log(num), 2)
                 time_need = time_one_iter * iterations_need
                 f.write(f"Time consumed: {time_spent} sec\n")
                 f.write(f"Iterations: {iterations}\n")

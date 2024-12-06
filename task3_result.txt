@@ -101,8 +101,8 @@ Result: TIMEOUT
 Time consumed: 3600.0539615154266 sec
 Iterations: 13347952
 Duration of one iteration: 0.000269708338890897 sec
-Estimated number of iterations: 8.520596565431583e+19
-Estimated execution time: 2.2980759460220344e+16 s = 728715102.0 y 41.0 d 1.0 h 39.0 m 4.0 s
+Estimated number of iterations: 7379499494401.028
+Estimated execution time: 1990312550.4811158 s = 63.0 y 41.0 d 0.0 h 35.0 m 50.48111581802368 s
        i      B[i]     l                                                                                a  d
        1         3 167.0 28736456788329733128524573051367718394041538800898032302154605922007124250306872  1
        2         5 114.0 48916792648447425777043166681892373564001863372258864610117619159832354807133960  1

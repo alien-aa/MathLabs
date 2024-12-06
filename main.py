@@ -1,3 +1,5 @@
+import asyncio
+
 from lab1.euclid import Euclid
 from lab1.bineuclid import BinEuclid
 from lab1.remaineuclid import RemainEuclid
@@ -5,7 +7,9 @@ from lab1.remaineuclid import RemainEuclid
 from lab2.fermat import FermatTest
 from lab2.solovay_strassen import SolovayStrassenTest
 from lab2.rabin_miller import RabinMillerTest
+from lab3.rho_1_pollard import Rho1Pollard
 
+from lab3.rho_pollard import RhoPollard
 
 def read_input(filename: str = ""):
     with open(filename, 'r', encoding='utf-8') as f:
@@ -97,9 +101,29 @@ def task2(input_numbers: dict):
     repeat_function(repetition_number, algorithm.print_results, number_2)
     repeat_function(repetition_number, algorithm.print_results, number_3)
 
+def task3(input_numbers: dict):
+    output_file = "task3_result.txt"
+    algorithm = RhoPollard(c=1, add=5)
+    asyncio.run(algorithm.print_results(input_numbers["3"][0], output_file))
+    algorithm = Rho1Pollard()
+    asyncio.run(algorithm.print_results(input_numbers["3"][0], output_file))
+    algorithm = RhoPollard(c=1, add=5)
+    asyncio.run(algorithm.print_results(input_numbers["3"][1], output_file))
+    algorithm = Rho1Pollard()
+    asyncio.run(algorithm.print_results(input_numbers["3"][1], output_file))
+    algorithm = RhoPollard(c=1, add=5)
+    asyncio.run(algorithm.print_results(input_numbers["3"][2], output_file))
+    algorithm = Rho1Pollard()
+    asyncio.run(algorithm.print_results(input_numbers["3"][2], output_file))
+
+def task4(input_numbers: dict):
+    output_file = "task4_result.txt"
+
 def main(input_file: str = ""):
     numbers = read_input(filename=input_file)
-    task2(input_numbers=numbers)
+    # task2(input_numbers=numbers)
+    # task3(input_numbers=numbers)
+    task4(input_numbers=numbers)
 
 
 if __name__ == "__main__":

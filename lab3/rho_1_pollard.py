@@ -80,8 +80,6 @@ class Rho1Pollard(ITask3):
         self.d = []
         self.i = 0
 
-    def run_factorization(self, num: int):
-        asyncio.run(self.factorization(num))
 
     async def factorization(self, num: int) -> None:
         p_i = 3
@@ -110,6 +108,9 @@ class Rho1Pollard(ITask3):
                 if p_i > num:
                     self.p = -1
                     return
+
+    def run_factorization(self, num: int):
+        asyncio.run(self.factorization(num))
 
     @staticmethod
     def _simplified_gcd_func(a: int, b: int) -> int:

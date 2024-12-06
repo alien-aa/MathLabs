@@ -79,8 +79,6 @@ class RhoPollard(ITask3):
         self.d = []
         self.i = 0
 
-    def run_factorization(self, num: int):
-        asyncio.run(self.factorization(num))
 
     async def factorization(self, num: int) -> None:
         a = self.c
@@ -103,6 +101,9 @@ class RhoPollard(ITask3):
         self._append_custom(self.b, b)
         self._append_custom(self.d, d)
         self.i += 1
+
+    def run_factorization(self, num: int):
+        asyncio.run(self.factorization(num))
 
     def _compressive_mapping(self, x: int, n: int) -> int:
         return (pow(x, 2) + self.add) % n

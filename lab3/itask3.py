@@ -9,9 +9,9 @@ class ITask3(ABC):
         self.p = None
 
     @abstractmethod
-    def print_results(self, num: int, filename: str) -> None:
+    async def print_results(self, num: int, filename: str) -> None:
         pass
 
     @abstractmethod
-    def factorization(self, num: int) -> None:
+    async def factorization(self, num: int) -> None:
         pass

@@ -120,8 +120,9 @@ def task3(input_numbers: dict):
 
 def main(input_file: str = ""):
     numbers = read_input(filename=input_file)
+    task1(input_numbers=numbers)
     task2(input_numbers=numbers)
-    # task3(input_numbers=numbers)
+    task3(input_numbers=numbers)
 
 
 if __name__ == "__main__":

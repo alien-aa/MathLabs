@@ -122,15 +122,15 @@ def task3(input_numbers: dict):
     asyncio.run(algorithm.print_results(input_numbers["3"][2], output_file))
 
 def task4(input_numbers: dict):
-    algorithm = RhoPollardLog()
-    asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],
-                                        input_numbers["4"][2], input_numbers["4"][3],
-                                        "task4_result.txt"))
-    algorithm = GiantStepBabyStep()
-    gc.collect()
-    asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],
-                                        input_numbers["4"][2], input_numbers["4"][3],
-                                        "task4_result.txt"))
+    # algorithm = RhoPollardLog()
+    # asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],
+    #                                     input_numbers["4"][2], input_numbers["4"][3],
+    #                                     "task4_result.txt"))
+    # algorithm = GiantStepBabyStep()
+    # gc.collect()
+    # asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],
+    #                                     input_numbers["4"][2], input_numbers["4"][3],
+    #                                     "task4_result.txt"))
     algorithm = DecompositionBase()
     gc.collect()
     asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],

@@ -33,7 +33,7 @@ class DecompositionBase(ITask4):
         start = time.time()
         thread = threading.Thread(target=self.run_discrete_logarithm, args=(a, b, p, q,))
         thread.start()
-        thread.join(timeout=7200)
+        thread.join(timeout=100)
 
         if thread.is_alive():
             self._stop_event.set()
@@ -80,7 +80,9 @@ class DecompositionBase(ITask4):
             df = pd.DataFrame({'u_i': self.u_i,
                                'b_i': self.smooth_values})
             f.write(df.to_string(index=False))
-            f.write("\nVectors:\n")
+            f.write("\nV and vectors:\n")
+            f.write(f"V  = {self.v}\n")
+
             if len(self.a_m) >= 5:
                 for i in range(len(self.a_m) - 5, len(self.a_m)):
                     f.write(f"{self.a_m[i]}\n")

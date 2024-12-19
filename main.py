@@ -1,5 +1,5 @@
 import asyncio
-
+import gc
 from lab1.euclid import Euclid
 from lab1.bineuclid import BinEuclid
 from lab1.remaineuclid import RemainEuclid
@@ -11,6 +11,10 @@ from lab2.rabin_miller import RabinMillerTest
 from lab3.rho_pollard import RhoPollard
 from lab3.p_1_pollard import P1Pollard
 
+
+from lab4.rho_pollard_log import RhoPollardLog
+from lab4.gstep_bstep import GiantStepBabyStep
+from lab4.decomposition_base import DecompositionBase
 
 def read_input(filename: str = ""):
     with open(filename, 'r', encoding='utf-8') as f:
@@ -117,12 +121,29 @@ def task3(input_numbers: dict):
     algorithm = P1Pollard()
     asyncio.run(algorithm.print_results(input_numbers["3"][2], output_file))
 
+def task4(input_numbers: dict):
+    algorithm = RhoPollardLog()
+    asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],
+                                        input_numbers["4"][2], input_numbers["4"][3],
+                                        "task4_result.txt"))
+    algorithm = GiantStepBabyStep()
+    gc.collect()
+    asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],
+                                        input_numbers["4"][2], input_numbers["4"][3],
+                                         "task4_result.txt"))
+    algorithm = DecompositionBase()
+    gc.collect()
+    asyncio.run(algorithm.print_results(input_numbers["4"][0], input_numbers["4"][1],
+                                        input_numbers["4"][2], input_numbers["4"][3],
+                                        "task4_result.txt"))
+
 
 def main(input_file: str = ""):
     numbers = read_input(filename=input_file)
     task1(input_numbers=numbers)
     task2(input_numbers=numbers)
     task3(input_numbers=numbers)
+    task4(input_numbers=numbers)
 
 
 if __name__ == "__main__":
